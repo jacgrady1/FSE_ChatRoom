@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="/static/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="/static/js/chat.js?1232" type="text/javascript"></script>
+    </head>
+    <body>
+       
+        <div class="messages" id="messages">
+        <h1 class="message-main" id="message-main">ChatRoom</h1>
+        {% for message in messages %}
+            <h4>{{message.user.name}} says: {{message.text}} at {{message.created}}</h4>
+        {% endfor%}
+        </div>
+
+        <form class="message_form" current-user="{{current_user.name}}" action="{% url 'chat' current_user.name %}" method="post" >
+            <div>
+                {% for field in MessageForm.visible_fields %}
+                    {{field}}
+                {% endfor %}
+            </div>
+            <button type="submit" >done</button>
+            {% csrf_token %}
+        </form>
+    
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <h1>Join Now</h1>
+    <form method='post' action='loggedin/'>
+        <input name='name' placeholder="your name...">
+        <button type="submit">confirm</button>
+        {% csrf_token %}
+    </form>
+
+   <!--  <form action="/{your-name}/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK"> -->
+
+</body>
+</html>
